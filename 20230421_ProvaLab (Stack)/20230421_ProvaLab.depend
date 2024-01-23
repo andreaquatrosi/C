@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1706034374 source:c:\informatica\esercizi esame\20230421_provalab\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
