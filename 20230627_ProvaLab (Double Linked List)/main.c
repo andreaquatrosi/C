@@ -128,5 +128,7 @@ int main(int argc, char *argv[]){
     printf("\n");
     elab(arg.F, &lst);
 
+    printf("\nEnd of Exam!\n");
+
     return 0;
 }
