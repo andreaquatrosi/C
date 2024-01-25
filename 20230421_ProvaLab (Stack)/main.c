@@ -88,16 +88,20 @@ void buildStack(const char *nomeFile, stack *pila){
 
 char *sortArray(char word[]) {
     int len = strlen(word);
-
-    for (int i = 0; i < len - 1; i++) {
-        for (int j = 0; j < len - i - 1; j++) {
+    int swapped;
+    //for (int i = 0; i < len - 1; i++) {
+    do{
+        swapped = 0;
+        for (int j = 0; j < len /*- i*/ - 1; j++) {
             if (word[j] > word[j + 1]) {
                 char temp = word[j];
                 word[j] = word[j + 1];
                 word[j + 1] = temp;
+                swapped = 1;
             }
         }
-    }
+    }while(swapped);
+    //}
 
     return word;
 }
