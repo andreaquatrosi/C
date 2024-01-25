@@ -86,7 +86,7 @@ void buildStack(const char *nomeFile, stack *pila){
     fclose(fi);
 }
 
-char *sortArray(char word[]) {
+char *sortArray(char word[]) { //BubbleSort
     int len = strlen(word);
     int swapped;
     //for (int i = 0; i < len - 1; i++) {
