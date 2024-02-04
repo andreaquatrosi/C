@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     parameters pars = readParameters(argc, argv);
     // printf("%s, %s", pars.input_file, pars.output_file);
     printf("** A **\n");
+
     double ***A = createMatrix(pars.input_file);
     printMatrix(A);
 
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
 
     writeToFile(pars.output_file, array);
 
+    // free
     for(short i = 0; i < N; i++){
         for(short j = 0; j < N; j++){
             free(A[i][j]);
@@ -54,7 +56,7 @@ int main(int argc, char *argv[])
 
 // functions
 parameters readParameters(int argc, char *argv[]){
-    if(argc != 3){
+    if(argc != 3){ // datapath, input.txt, output.txt
         fprintf(stderr, "Usage: %s <input.txt> <output.txt>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
@@ -147,7 +149,7 @@ void writeToFile(const char *nomeFile, double *array){
     }
 
     for(short i = 0; i < 18; i++){
-        fprintf(fo, "%lf", array[i]);
+        fprintf(fo, "%lf\n", array[i]);
     }
 
     fclose(fo);
